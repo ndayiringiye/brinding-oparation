@@ -1,8 +1,9 @@
-import React from 'react'
-
+import StasisFinancePlatform from "./Components/Test"
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      < StasisFinancePlatform />
+    </div>
   )
 }
 
