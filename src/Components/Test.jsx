@@ -13,13 +13,13 @@ import {
   CheckCircle,
   Info
 } from "lucide-react";
+import imge from "../../public/images/image.png";
 
 export default function StasisFinancePlatform() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [currentPopup, setCurrentPopup] = useState("");
   
-  // For animation effect when page loads
   const [isLoaded, setIsLoaded] = useState(false);
   
   useEffect(() => {
@@ -45,14 +45,12 @@ export default function StasisFinancePlatform() {
   
   return (
     <div className="font-sans text-gray-900 overflow-x-hidden">
-      {/* Header */}
       <header className={`bg-blue-600 fixed w-full z-50 transition-all duration-500 ${isLoaded ? "translate-y-0" : "-translate-y-full"}`}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center">
             <h1 className="text-white text-2xl font-bold">STASIS</h1>
           </div>
           
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <a href="#" className="text-white hover:text-blue-200 transition">Product</a>
             <a href="#" className="text-white hover:text-blue-200 transition">Service</a>
@@ -67,7 +65,6 @@ export default function StasisFinancePlatform() {
               Get EURS
             </button>
             
-            {/* Mobile menu button */}
             <button 
               className="text-white md:hidden" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -77,7 +74,6 @@ export default function StasisFinancePlatform() {
           </div>
         </div>
         
-        {/* Mobile Navigation */}
         <div 
           className={`md:hidden bg-blue-700 transition-all duration-300 ease-in-out overflow-hidden ${
             isMenuOpen ? "max-h-60" : "max-h-0"
@@ -100,7 +96,6 @@ export default function StasisFinancePlatform() {
         </div>
       </header>
       
-      {/* Hero Section */}
       <section className={`bg-blue-600 pt-24 pb-16 md:pt-32 md:pb-24 transition-all duration-700 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
@@ -129,10 +124,9 @@ export default function StasisFinancePlatform() {
                 </button>
               </div>
             </div>
-            
             <div className="md:w-1/2 relative">
               <div className="relative z-10 transform transition-all duration-700 hover:scale-105">
-                <img src="/api/placeholder/280/550" alt="Mobile app screenshot" className="mx-auto" />
+                <img src={imge} alt="Mobile app screenshot" className="mx-auto" />
                 
                 <div className="absolute -bottom-6 -left-16 bg-blue-500 text-white p-4 rounded-lg shadow-lg transform transition-transform hover:scale-105">
                   <div className="flex items-center">
@@ -162,7 +156,6 @@ export default function StasisFinancePlatform() {
           </div>
         </div>
         
-        {/* Partners */}
         <div className="container mx-auto px-4 mt-16">
           <div className="bg-white rounded-lg p-6 flex flex-wrap justify-around items-center">
             {partners.map((partner, index) => (
@@ -177,7 +170,6 @@ export default function StasisFinancePlatform() {
         </div>
       </section>
       
-      {/* Features Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
@@ -277,7 +269,6 @@ export default function StasisFinancePlatform() {
         </div>
       </section>
       
-      {/* Working With Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Who We Are Working With</h2>
@@ -325,7 +316,6 @@ export default function StasisFinancePlatform() {
         </div>
       </section>
       
-      {/* Popup/Modal */}
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 animate-in slide-in-from-bottom duration-300">
@@ -450,7 +440,6 @@ export default function StasisFinancePlatform() {
         </div>
       )}
       
-      {/* Chat Button */}
       <button 
         className="fixed bottom-6 right-6 bg-blue-600 text-white h-14 w-14 rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition z-40 group"
         onClick={() => openPopup("chat")}
